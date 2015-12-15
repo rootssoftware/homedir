@@ -1,0 +1,11 @@
+export PATH=~/.bin:/opt/local/bin:/usr/local/bin:~/.cabal/bin:~/.sencha/Cmd:/usr/local/mysql/bin:/usr/local/git/bin:$PATH:.
+# export RUBYOPT=-rubygems
+export RUBYLIB=/var/lib/gems/1.8
+export EDITOR=vim
+export LSCOLORS="dxfxcxdxbxegedabagacad"
+export STASH_HOME=/Users/joris/Documents/stash/stash-home
+export M2_HOME=/opt/apache-maven-3.1.1
+export PATH=$PATH:$M2_HOME/bin
+export KARAF_DEBUG=
+export LC_ALL=en_US.UTF-8
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
