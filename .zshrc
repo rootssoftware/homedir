@@ -74,6 +74,7 @@ alias x="which" # x marks the spot!
 alias i="ig3cmd"
 alias c="ig3cmd -c"
 alias startx="exec startx"
+alias vi="vim -u NONE "
 
 alias -g ND='$(ls -d *(/om[1]))' # newest directory
 alias -g NF='$(ls *(.om[1]))'    # newest file
