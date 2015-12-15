@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BAK=~/.homedir_backup_`date +%Y%m%d`
+BAK=~/.homedir_backup_`date +%Y%m%d%H%M`
 HERE=`pwd`
 HOMEDIR=$HERE/homedir
 
