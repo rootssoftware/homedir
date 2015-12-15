@@ -6,6 +6,8 @@ HOMEDIR=$HERE/homedir
 
 mkdir $BAK
 cd $HOMEDIR
+git update-index --assume-unchanged README.md
+git update-index --assume-unchanged install.sh
 rm README.md
 rm install.sh
 for file in .* *
