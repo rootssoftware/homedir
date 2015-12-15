@@ -4,7 +4,6 @@ compinit
 ZLS_COLORS=$LS_COLORS
 promptinit
 source ~/.zsh_prompt_gentoo_setup
-# prompt gentoo
 
 setopt CORRECT AUTO_LIST AUTO_MENU NO_HUP
 setopt NO_CHECK_JOBS PATH_DIRS NO_BEEP EXTENDED_GLOB
@@ -52,7 +51,7 @@ alias ../../../../..='cd ../../../../..'
 alias cd/='cd /'
 alias -g ZSHRC='~/.zshrc'
 
-alias ls="ls -G"
+alias ls="ls --color"
 # alias du='du -h'
 # alias df='df -h'
 alias deparse='perl -MO=Deparse -e'
@@ -67,19 +66,14 @@ alias cal="cal -m"
 # alias irb="irb -rubygems"
 # alias ruby="ruby -rubygems"
 # alias sdlmame="sdlmame -inipath ~/.mame/ini"
-# alias ag="s apt-get"
-# alias ac="apt-cache"
+alias ag="s apt-get"
+alias ac="apt-cache"
 # alias ri="noglob ri"
 alias xterm="uxterm -bg black -fg grey"
-# alias irssi="screen -S irc irssi"
 alias x="which" # x marks the spot!
 alias i="ig3cmd"
 alias c="ig3cmd -c"
 alias startx="exec startx"
-# alias t="twitter.pl "
-# alias /me="twitter.pl "
-# alias /hammie="twitter.pl -f ~/.hammietwitterrc "
-# alias /google="twitter.pl -f ~/.googletwitterrc "
 
 alias -g ND='$(ls -d *(/om[1]))' # newest directory
 alias -g NF='$(ls *(.om[1]))'    # newest file
