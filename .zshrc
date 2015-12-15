@@ -51,7 +51,7 @@ alias ../../../../..='cd ../../../../..'
 alias cd/='cd /'
 alias -g ZSHRC='~/.zshrc'
 
-alias ls="ls --color"
+alias ls="ls -G"
 # alias du='du -h'
 # alias df='df -h'
 alias deparse='perl -MO=Deparse -e'
