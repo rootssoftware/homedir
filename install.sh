@@ -10,14 +10,14 @@ git update-index --assume-unchanged README.md
 git update-index --assume-unchanged install.sh
 rm README.md
 rm install.sh
-for file in .* *
+for file in `ls -A`
 do
-	mv ~/$file $BAK/
+	mv ~/$file $BAK/ > /dev/null 2>&1
 done
+mv `ls -A` ~/
 cd $BAK
 echo "Moved existing files to $BAK:"
-ls -a
+ls -A
 cd $HERE
-mv $HOMEDIR/.* $HOMEDIR/* ~/
 rmdir $HOMEDIR
 echo "Done!"
