@@ -125,3 +125,5 @@ case $TERM in
 	preexec () { echo -ne "\ek${1%% *}\e\\" }
 	;;
 esac
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
