@@ -74,6 +74,7 @@ alias x="which" # x marks the spot!
 alias startx="exec startx"
 alias vi="vim -u NONE "
 alias whatismyip="wget http://ipinfo.io/ip -qO -"
+alias wget-java="wget --no-check-certificate --no-cookies --header \"Cookie: oraclelicense=accept-securebackup-cookie\" "
 
 alias -g ND='$(ls -d *(/om[1]))' # newest directory
 alias -g NF='$(ls *(.om[1]))'    # newest file
@@ -126,7 +127,7 @@ case $TERM in
 	;;
 esac
 
-. .bin/cpdev
+. ~/.bin/dev
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 iterm2_print_user_vars() {
