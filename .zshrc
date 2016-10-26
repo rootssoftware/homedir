@@ -52,26 +52,14 @@ alias cd/='cd /'
 alias -g ZSHRC='~/.zshrc'
 
 alias ls="ls --color"
-# alias du='du -h'
-# alias df='df -h'
 alias deparse='perl -MO=Deparse -e'
 alias grep="grep --color=auto"
 alias s="sudo "
 alias e="emerge "
 alias l="ls"
-alias ll="ls -l"
-alias la="ls -a"
-alias lla="la -l"
-alias cal="cal -m"
-# alias irb="irb -rubygems"
-# alias ruby="ruby -rubygems"
-# alias sdlmame="sdlmame -inipath ~/.mame/ini"
-alias ag="s apt-get"
+alias ag="apt-get"
 alias ac="apt-cache"
-# alias ri="noglob ri"
-alias xterm="uxterm -bg black -fg grey"
 alias x="which" # x marks the spot!
-alias startx="exec startx"
 alias vi="vim -u NONE "
 alias whatismyip="wget http://ipinfo.io/ip -qO -"
 

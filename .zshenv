@@ -1,12 +1,10 @@
-export PATH=~/.bin:/opt/local/bin:/usr/local/bin:~/.cabal/bin:~/.sencha/Cmd:/usr/local/mysql/bin:/usr/local/git/bin:$PATH:.
-# export RUBYOPT=-rubygems
-export RUBYLIB=/var/lib/gems/1.8
+export PATH=/usr/local/bin:$PATH
+export PATH=~/.bin:$PATH
+export PATH=$PATH:.
 export EDITOR=vim
 export LSCOLORS="dxfxcxdxbxegedabagacad"
-export M2_HOME=/opt/apache-maven-3.1.1
-export PATH=$PATH:$M2_HOME/bin
-export KARAF_DEBUG=true
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export JAVA_HOME=$(test -x /usr/libexec/java_home && /usr/libexec/java_home -v 1.8)
+export JAVA_HOME=/opt/java
+export PATH=$JAVA_HOME:$PATH
