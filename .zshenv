@@ -6,5 +6,5 @@ export LSCOLORS="dxfxcxdxbxegedabagacad"
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export JAVA_HOME=/opt/java
+export JAVA_HOME=/opt/carpass/java
 export PATH=$JAVA_HOME:$PATH
