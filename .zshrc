@@ -56,7 +56,6 @@ alias deparse='perl -MO=Deparse -e'
 alias grep="grep --color=auto"
 alias s="sudo "
 alias e="emerge "
-alias l="ls"
 alias ag="apt-get"
 alias ac="apt-cache"
 alias x="which" # x marks the spot!
