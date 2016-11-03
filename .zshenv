@@ -1,6 +1,7 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=~/.bin:$PATH
 export PATH=$PATH:.
+export PATH=/opt/carpass/software/fuse-scripts:$PATH
 export EDITOR=vim
 export LSCOLORS="dxfxcxdxbxegedabagacad"
 export LANGUAGE=en_US.UTF-8
