@@ -79,6 +79,13 @@ function exportfile () {
 	echo EOF
 }
 
+function exportfile () {
+	file=$1
+	echo "cat <<EOF >$file"
+	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
+	echo EOF
+}
+
 # ^W kills parts of paths
 WORDCHARS=${WORDCHARS//[&=\/;!#%\{]}
 
