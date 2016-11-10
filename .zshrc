@@ -56,7 +56,6 @@ alias deparse='perl -MO=Deparse -e'
 alias grep="grep --color=auto"
 alias s="sudo "
 alias e="emerge "
-alias l="ls"
 alias ag="apt-get"
 alias ac="apt-cache"
 alias x="which" # x marks the spot!
@@ -70,6 +69,13 @@ alias -g G='| grep'
 alias -g W='| wc'
 alias -g H='| head'
 alias -g T='| tail'
+
+function exportfile () {
+	file=$1
+	echo "cat <<EOF >$file"
+	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
+	echo EOF
+}
 
 # ^W kills parts of paths
 WORDCHARS=${WORDCHARS//[&=\/;!#%\{]}
