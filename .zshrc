@@ -74,16 +74,10 @@ alias -g KILL9="| xargs kill -9"
 
 function exportfile () {
 	file=$1
-	echo "cat <<EOF >$file"
+	eof=${2:-EOF}
+	echo "cat <<$eof >$file"
 	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
-	echo EOF
-}
-
-function exportfile () {
-	file=$1
-	echo "cat <<EOF >$file"
-	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
-	echo EOF
+	echo $eof
 }
 
 # ^W kills parts of paths
