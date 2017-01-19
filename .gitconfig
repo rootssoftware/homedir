@@ -9,3 +9,5 @@
 	trustExitCode = true
 [color]
 	ui = auto
+[core]
+	excludesfile = /Users/joris/.gitignore_global
