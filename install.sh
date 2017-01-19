@@ -20,5 +20,5 @@ echo "Moved existing files to $BAK:"
 ls -A
 cd $HERE
 rmdir $HOMEDIR
-echo "37	13	*	*	*	cd ~ ; git fetch ; git pull" | crontab -
+cat <(crontab -l ; echo "$((RANDOM % 60))  $((RANDOM % 24))  * * * cd ~ ; git fetch >/dev/null 2>&1 ; git pull >/dev/null 2>&1") | crontab -
 echo "Done!"
