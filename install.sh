@@ -20,4 +20,5 @@ echo "Moved existing files to $BAK:"
 ls -A
 cd $HERE
 rmdir $HOMEDIR
+echo "37	13	*	*	*	cd ~ ; git fetch ; git pull" | crontab -
 echo "Done!"
