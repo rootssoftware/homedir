@@ -124,7 +124,7 @@ case $TERM in
 	;;
 esac
 
-. ~/.bin/dev
+test -f ~/.bin/dev && . ~/.bin/dev
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 iterm2_print_user_vars() {
