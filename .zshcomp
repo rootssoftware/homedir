@@ -16,5 +16,5 @@ zstyle ':completion:*' use-cache on
 zstyle :compinstall filename '/home/jovdmeer/.zsh_comp'
 
 autoload -Uz compinit
-compinit
+compinit -u
 # End of lines added by compinstall

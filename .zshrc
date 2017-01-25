@@ -1,6 +1,6 @@
 autoload -U compinit promptinit colors
 colors
-compinit
+compinit -u
 ZLS_COLORS=$LS_COLORS
 promptinit
 source ~/.zsh_prompt_gentoo_setup
