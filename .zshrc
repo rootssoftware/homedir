@@ -128,4 +128,5 @@ iterm2_print_user_vars() {
 	iterm2_set_user_var hostname $(echo $HOSTNAME | cut -f 1 -d '.')
 }
 
+test -f .zsh_local && . .zsh_local
 . /opt/carpass/scripts/profile
