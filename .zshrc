@@ -70,7 +70,7 @@ alias -g G='| grep'
 alias -g W='| wc'
 alias -g H='| head'
 alias -g T='| tail'
-alias -g PID="| awk '{ print \$2 }'"
+alias -g PID="| awk '{ print \$1 }'"
 alias -g KILL9="| xargs kill -9"
 
 function exportfile () {
