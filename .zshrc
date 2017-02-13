@@ -72,6 +72,8 @@ alias -g T='| tail'
 alias -g PID="| awk '{ print \$2 }'"
 alias -g KILL9="| xargs kill -9"
 
+alias apache2ctl="echo please use 'service apache2 ...'"
+
 function exportfile () {
 	file=$1
 	eof=${2:-EOF}
