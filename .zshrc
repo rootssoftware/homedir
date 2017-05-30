@@ -72,12 +72,14 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g PID="| awk '{ print \$1 }'"
 alias -g KILL9="| xargs kill -9"
+alias ssh-copy-id="ssh-copy-id -i ~/.ssh/id_rsa "
 
 function exportfile () {
 	file=$1
 	eof=${2:-EOF}
 	echo "cat <<$eof >$file"
 	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
+	echo
 	echo $eof
 }
 

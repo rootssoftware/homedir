@@ -11,3 +11,7 @@
 	ui = auto
 [core]
 	excludesfile = /Users/joris/.gitignore_global
+[commit]
+	template = /Users/joris/.stCommitMsg
+[pull]
+	rebase = true
