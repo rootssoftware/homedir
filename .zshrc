@@ -61,6 +61,7 @@ alias ac="apt-cache"
 alias x="which" # x marks the spot!
 alias vi="vim -u NONE "
 alias whatismyip="wget http://ipinfo.io/ip -qO -"
+alias wget-java="wget --no-check-certificate --no-cookies --header \"Cookie: oraclelicense=accept-securebackup-cookie\" "
 
 alias -g ND='$(ls -d *(/om[1]))' # newest directory
 alias -g NF='$(ls *(.om[1]))'    # newest file
@@ -78,7 +79,7 @@ function exportfile () {
 	file=$1
 	eof=${2:-EOF}
 	echo "cat <<$eof >$file"
-	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
+	sed -e 's/\\/\\\\/g' -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
 	echo $eof
 }
 
