@@ -73,11 +73,13 @@ alias -g T='| tail'
 alias -g PID="| awk '{ print \$2 }'"
 alias -g KILL9="| xargs kill -9"
 
+alias apache2ctl="echo please use 'service apache2 ...'"
+
 function exportfile () {
 	file=$1
 	eof=${2:-EOF}
 	echo "cat <<$eof >$file"
-	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
+	sed -e 's/\\/\\\\/g' -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
 	echo $eof
 }
 
