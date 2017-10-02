@@ -55,6 +55,7 @@ alias ls="ls --color"
 alias deparse='perl -MO=Deparse -e'
 alias grep="grep --color=auto"
 alias s="sudo "
+alias su="su -s /bin/zsh "
 alias e="emerge "
 alias ag="apt-get"
 alias ac="apt-cache"
