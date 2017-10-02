@@ -1,6 +1,8 @@
 [user]
 	email = joris.vdmr@gmail.com
 	name = Joris Vandermeersch
+[includeIf "gitdir:~/programming"]
+	path = ~/.rootsgitconfig
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
