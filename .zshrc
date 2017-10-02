@@ -62,6 +62,7 @@ alias ac="apt-cache"
 alias x="which" # x marks the spot!
 alias vi="vim -u NONE "
 alias whatismyip="wget http://ipinfo.io/ip -qO -"
+alias wget-java="wget --no-check-certificate --no-cookies --header \"Cookie: oraclelicense=accept-securebackup-cookie\" "
 
 alias -g ND='$(ls -d *(/om[1]))' # newest directory
 alias -g NF='$(ls *(.om[1]))'    # newest file
@@ -73,11 +74,13 @@ alias -g T='| tail'
 alias -g PID="| awk '{ print \$2 }'"
 alias -g KILL9="| xargs kill -9"
 
+alias apache2ctl="echo please use 'service apache2 ...'"
+
 function exportfile () {
 	file=$1
 	eof=${2:-EOF}
 	echo "cat <<$eof >$file"
-	sed -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' $file
+	sed -e 's/\\/\\\\/g' -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' -e '$a\' $file
 	echo $eof
 }
 
@@ -128,3 +131,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 iterm2_print_user_vars() {
 	iterm2_set_user_var hostname $(echo $HOSTNAME | cut -f 1 -d '.')
 }
+
+test -f .zsh_local && . .zsh_local
