@@ -62,6 +62,7 @@ alias x="which" # x marks the spot!
 alias vi="vim -u NONE "
 alias whatismyip="wget http://ipinfo.io/ip -qO -"
 alias wget-java="wget --no-check-certificate --no-cookies --header \"Cookie: oraclelicense=accept-securebackup-cookie\" "
+alias reboot="echo This will kill your OpenVPN connection which runs through this server! If you are sure, unalias reboot then try again"
 
 alias -g ND='$(ls -d *(/om[1]))' # newest directory
 alias -g NF='$(ls *(.om[1]))'    # newest file
