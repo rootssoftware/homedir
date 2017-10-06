@@ -132,4 +132,4 @@ iterm2_print_user_vars() {
 }
 
 test -f .zsh_local && . .zsh_local
-. /opt/carpass/scripts/profile
+test -f /opt/carpass/scripts/profile && . /opt/carpass/scripts/profile
