@@ -21,4 +21,6 @@ ls -A
 cd $HERE
 rmdir $HOMEDIR
 cat <(crontab -l ; echo "$((RANDOM % 60))  $((RANDOM % 24))  * * * cd ~ ; git fetch >/dev/null 2>&1 ; git pull >/dev/null 2>&1") | crontab -
+git clone https://github.com/jvdmr/vimrc
+bash vimrc/install.sh
 echo "Done!"
