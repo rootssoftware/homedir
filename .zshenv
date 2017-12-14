@@ -9,5 +9,5 @@ export KARAF_DEBUG=
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export JAVA_HOME=$(test -x /usr/libexec/java_home && /usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(test -x /usr/libexec/java_home && /usr/libexec/java_home -v 9)
 export PATH=/usr/local/Cellar/gnu-sed/4.2.2:$PATH

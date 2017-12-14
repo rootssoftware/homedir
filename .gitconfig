@@ -1,5 +1,5 @@
 [user]
-	email = joris.vdmr@gmail.com
+	email = joris.vandermeersch@roots.be
 	name = Joris Vandermeersch
 [includeIf "gitdir:~/programming"]
 	path = ~/.rootsgitconfig
