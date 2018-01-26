@@ -74,8 +74,6 @@ alias -g PID="| awk '{ print \$1 }'"
 alias -g KILL9="| xargs kill -9"
 alias ssh-copy-id="ssh-copy-id -i ~/.ssh/id_rsa "
 
-alias apache2ctl="echo please use 'service apache2 ...'"
-
 function exportfile () {
 	file=$1
 	eof=${2:-EOF}
