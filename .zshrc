@@ -1,3 +1,27 @@
+### Stijn's zshrc
+# source /usr/share/zsh/share/antigen.zsh
+# antigen use oh-my-zsh
+#
+# antigen bundle git
+# antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle lein
+# antigen bundle rupa/z
+#
+# SPACESHIP_PROMPT_SYMBOL=">"
+# SPACESHIP_BATTERY_SHOW="false"
+# SPACESHIP_BATTERY_ALWAYS_SHOW="false"
+#
+# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+# antigen apply
+#
+# source /opt/google-cloud-sdk/path.zsh.inc
+# source /opt/google-cloud-sdk/completion.zsh.inc
+#
+# source ~/.aliases
+# source ~/.exports
+### end Stijn's zshrc
+
 autoload -U compinit promptinit colors
 colors
 compinit -u
@@ -12,7 +36,9 @@ setopt AUTOCD AUTOPUSHD SHORT_LOOPS
 setopt HIST_FIND_NO_DUPS HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE HIST_NO_STORE
 
-cdpath=(~/projects)
+setopt auto_cd
+
+cdpath=(~/programming /opt)
 
 unsetopt CASE_GLOB
 unsetopt NOMATCH
@@ -133,3 +159,4 @@ iterm2_print_user_vars() {
 }
 
 test -f .zsh_local && . .zsh_local
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
