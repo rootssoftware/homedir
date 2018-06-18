@@ -1,5 +1,5 @@
 ### Stijn's zshrc
-# source /usr/share/zsh/share/antigen.zsh
+# source ~/.zsh/antigen.zsh
 # antigen use oh-my-zsh
 #
 # antigen bundle git
@@ -27,7 +27,7 @@ colors
 compinit -u
 ZLS_COLORS=$LS_COLORS
 promptinit
-source ~/.zsh_prompt_gentoo_setup
+source ~/.zsh/prompt_gentoo_setup.zsh
 
 setopt CORRECT AUTO_LIST AUTO_MENU NO_HUP
 setopt NO_CHECK_JOBS PATH_DIRS NO_BEEP EXTENDED_GLOB
@@ -138,7 +138,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
-. ~/.zshcomp
+. ~/.zsh/completion.zsh
 
 case $TERM in
 	xterm*)
