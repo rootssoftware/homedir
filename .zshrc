@@ -159,4 +159,4 @@ iterm2_print_user_vars() {
 }
 
 test -f .zsh_local && . .zsh_local
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
