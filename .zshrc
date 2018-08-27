@@ -104,7 +104,7 @@ function exportfile () {
 	file=$1
 	eof=${2:-EOF}
 	echo "cat <<$eof >$file"
-	sed -e 's/\\/\\\\/g' -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' -e '$a\' $file
+	sed -e 's/\\/\\\\/g' -e 's/\$/\\$/g' -e 's/`/\\`/g' -e $'s/\t/  /g' -e '$a\' $file
 	echo $eof
 }
 
@@ -160,3 +160,7 @@ iterm2_print_user_vars() {
 
 test -f .zsh_local && . .zsh_local
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
