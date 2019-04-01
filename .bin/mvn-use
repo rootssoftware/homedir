@@ -1,0 +1,10 @@
+#!/bin/bash
+
+tag=$1
+
+cd ~/.m2
+rm settings.xml
+#rm repository
+ln -s $tag-settings.xml settings.xml
+#ln -s $tag-repository repository
+echo switched Maven to $tag settings.

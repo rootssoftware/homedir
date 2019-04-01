@@ -1,0 +1,16 @@
+#!/bin/bash
+
+domain=$1
+
+if [ -z $domain ]
+then
+	echo "please specify domain" >&2
+	echo "usage: $0 <domain>" >&2
+	exit 1
+fi
+
+cd /etc/ssl
+test -f $domain.key || openssl genrsa -out $domain.key 4096
+chmod 400 $domain.key
+test -f $domain.csr || openssl req -new -sha256 -key $domain.key -out $domain.csr -config openssl.cnf
+test -f $domain.crt || openssl ca -days 3560 -md sha256 -in $domain.csr -out $domain.crt -extensions san -extfile <(cat openssl.cnf <(printf "[ san ]\nsubjectAltName=DNS:$domain"))

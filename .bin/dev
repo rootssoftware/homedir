@@ -1,0 +1,48 @@
+#!/bin/bash
+
+unset devname
+devmvn=roots
+
+. ~/.dev_profile
+
+test -n "$1" && dev=$1
+
+SRC_DIR=/Users/joris/programming/$dev
+NOTIFY="terminal-notifier -title Maven -message"
+
+function d() {
+	local destination="$SRC_DIR/$1"
+	cd $destination
+	pwd
+}
+
+function m() {
+	cd $SRC_DIR
+	skiptests="-DskipTests=true"
+	if [ -n "$1" ]
+	then
+		if [ "$1" == "-t" ]
+		then
+			skiptests=""
+			shift
+		fi
+	fi
+	targets=$@
+	if [ $# -eq 0 ]
+	then
+		targets="clean package"
+	fi
+	export skiptests
+	export targets
+	setopt SH_WORD_SPLIT
+	mvn $skiptests $targets
+}
+
+test -f ~/.dev/${dev} && . ~/.dev/${dev}
+test -n "$devname" || devname=$dev
+
+export PATH=$SRC_DIR/_scripts/macosx:$SRC_DIR/_scripts:$PATH
+
+mvn-use ${devmvn} >/dev/null 2>&1
+
+echo "ready for ${devname} development"

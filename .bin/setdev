@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+	echo "Usage: $0 <profile>"
+	exit 1
+fi
+
+profile=$1
+
+cd ~/.dev
+if ! [ -e ${profile} ]
+then
+cat <<EOF >${profile}
+#!/bin/bash
+
+devname=${profile}
+
+EOF
+	vim ${profile}
+fi
+if [ -e ${profile} ]
+then
+	echo "dev=${profile}" > ~/.dev_profile
+else
+	echo ".dev/${profile} not found!" >&2
+	exit 1
+fi
+
