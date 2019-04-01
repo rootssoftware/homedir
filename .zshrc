@@ -96,6 +96,7 @@ alias -g G='| grep'
 alias -g W='| wc'
 alias -g H='| head'
 alias -g T='| tail'
+alias -g A='| awk'
 alias -g PID="| awk '{ print \$1 }'"
 alias -g KILL9="| xargs kill -9"
 alias ssh-copy-id="ssh-copy-id -i ~/.ssh/id_rsa "
