@@ -7,8 +7,9 @@ devmvn=roots
 
 test -n "$1" && dev=$1
 
-SRC_DIR=/Users/joris/programming/$dev
-NOTIFY="terminal-notifier -title Maven -message"
+export SRC_DIR=/Users/joris/programming/$dev
+export NOTIFY="terminal-notifier -title Maven -message"
+export REPOSITORIES=.
 
 function d() {
 	local destination="$SRC_DIR/$1"
