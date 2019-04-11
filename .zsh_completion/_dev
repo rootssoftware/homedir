@@ -1,0 +1,8 @@
+#compdef dev
+
+_dev() {
+	_arguments '*:file:_files -W "$HOME/.dev/"'
+	return 0
+}
+
+_dev

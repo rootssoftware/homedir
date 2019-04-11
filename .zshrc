@@ -22,10 +22,15 @@
 # source ~/.exports
 ### end Stijn's zshrc
 
-autoload -U compinit promptinit colors
+fpath=($HOME/.zsh_completion $fpath)
+autoload -U compinit
+compinit
+
+autoload -U colors
 colors
-compinit -u
 ZLS_COLORS=$LS_COLORS
+
+autoload -U promptinit
 promptinit
 source ~/.zsh/prompt_gentoo_setup.zsh
 
