@@ -10,3 +10,7 @@ export LC_ALL=en_US.UTF-8
 export JAVA_HOME=/opt/java
 export NODE_HOME=/opt/nodejs
 export KARAF_DEBUG=
+
+export PGHOST=postgres.gcloud.roots.be
+export PGUSER=postgres
+export PGDATABASE=postgres
