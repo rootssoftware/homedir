@@ -1,4 +1,4 @@
-#compdef dev
+#compdef dev setdev
 
 _dev() {
 	_arguments '*:file:_files -W "$HOME/.dev/"'
