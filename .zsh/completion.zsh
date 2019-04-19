@@ -13,8 +13,8 @@ zstyle ':completion:*' menu select=5
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' squeeze-slashes 'yes'
 zstyle ':completion:*' use-cache on
-zstyle :compinstall filename '/home/jovdmeer/.zsh_comp'
+zstyle :compinstall filename '~/.zsh/completion.zsh'
 
 autoload -Uz compinit
-compinit
+compinit -u
 # End of lines added by compinstall
