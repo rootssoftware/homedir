@@ -1,9 +1,38 @@
-autoload -U compinit promptinit colors
-colors
+### Stijn's zshrc
+# source ~/.zsh/antigen.zsh
+# antigen use oh-my-zsh
+#
+# antigen bundle git
+# antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle lein
+# antigen bundle rupa/z
+#
+# SPACESHIP_PROMPT_SYMBOL=">"
+# SPACESHIP_BATTERY_SHOW="false"
+# SPACESHIP_BATTERY_ALWAYS_SHOW="false"
+#
+# antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+# antigen apply
+#
+# source /opt/google-cloud-sdk/path.zsh.inc
+# source /opt/google-cloud-sdk/completion.zsh.inc
+#
+# source ~/.aliases
+# source ~/.exports
+### end Stijn's zshrc
+
+fpath=($HOME/.zsh_completion $fpath)
+autoload -U compinit
 compinit
+
+autoload -U colors
+colors
 ZLS_COLORS=$LS_COLORS
+
+autoload -U promptinit
 promptinit
-source ~/.zsh_prompt_gentoo_setup
+source ~/.zsh/prompt_gentoo_setup.zsh
 
 setopt CORRECT AUTO_LIST AUTO_MENU NO_HUP
 setopt NO_CHECK_JOBS PATH_DIRS NO_BEEP EXTENDED_GLOB
@@ -12,7 +41,9 @@ setopt AUTOCD AUTOPUSHD SHORT_LOOPS
 setopt HIST_FIND_NO_DUPS HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE HIST_NO_STORE
 
-cdpath=(~/projects)
+setopt auto_cd
+
+cdpath=(~/programming /opt)
 
 unsetopt CASE_GLOB
 unsetopt NOMATCH
@@ -72,15 +103,14 @@ alias -g W='| wc'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g PID="| awk '{ print \$2 }'"
+alias -g A='| awk'
 alias -g KILL9="| xargs kill -9"
-
-alias apache2ctl="echo please use 'service apache2 ...'"
 
 function exportfile () {
 	file=$1
 	eof=${2:-EOF}
 	echo "cat <<$eof >$file"
-	sed -e 's/\\/\\\\/g' -e 's/\$/\\$/g' -e 's/`/\\`/g' -e 's/\t/  /g' -e '$a\' $file
+	sed -e 's/\\/\\\\/g' -e 's/\$/\\$/g' -e 's/`/\\`/g' -e $'s/\t/  /g' -e '$a\' $file
 	echo $eof
 }
 
@@ -114,7 +144,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
-. ~/.zshcomp
+. ~/.zsh/completion.zsh
 
 case $TERM in
 	xterm*)
@@ -127,9 +157,16 @@ case $TERM in
 	;;
 esac
 
+test -f ~/.bin/dev && . ~/.bin/dev
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 iterm2_print_user_vars() {
 	iterm2_set_user_var hostname $(echo $HOSTNAME | cut -f 1 -d '.')
 }
 
 test -f .zsh_local && . .zsh_local
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
