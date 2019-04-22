@@ -1,0 +1,29 @@
+#!/bin/bash
+
+## requires "<username> ALL=(ALL) NOPASSWD: /opt/carpass/scripts/deploy-automation/check-deploy.sh" in sudoers file on each server
+
+servers="ferrari porsche"
+
+if [ -n "$1" ]
+then
+	case $1 in
+		--server)
+			shift
+			servers=$1
+			shift
+			;;
+		--tst)
+			shift
+			servers="ferrari porsche"
+			;;
+		--stg)
+			shift
+			servers="maserati mclaren"
+			;;
+	esac
+fi
+
+for server in $servers
+do
+	ssh $server "sudo /opt/carpass/scripts/deploy-automation/check-deploy.sh $@" &
+done

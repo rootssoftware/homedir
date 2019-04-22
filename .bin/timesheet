@@ -1,0 +1,58 @@
+#!/bin/bash
+
+daysAgo=1
+untilNow=false
+format="%s"
+
+while [ -n "$1" ]
+do
+	case $1 in
+		[[:digit:]]*)
+			daysAgo=$1
+			;;
+		--until-now)
+			untilNow=true
+			;;
+		--show-date)
+			format="%s %ad"
+			;;
+		*)
+			echo $1
+			echo "Usage: $0 [number of days ago]" >&2
+			exit 1
+			;;
+	esac
+	shift
+done
+
+since="$daysAgo days ago.midnight"
+before="$((daysAgo - 1)) days ago.midnight"
+if [ $daysAgo -eq 0 ] || $untilNow
+then
+	before=
+fi
+
+cd $SRC_DIR
+
+ticket=""
+for d in $REPOSITORIES
+do
+	cd $d
+#  git log --all $since $before --author=joris.vandermeersch@roots.be --pretty=format:'%s' \
+  git log --all --since="$since" --before="$before" --author=joris.vandermeersch@roots.be --pretty=format:"$format"
+	echo
+  cd $SRC_DIR
+done \
+	| grep -v "^Merge branch " \
+	| sort \
+	| uniq \
+	| while read line
+do
+	currentTicket=`echo $line | grep "^${JIRA_KEY}-" | awk '{print $1}'`
+	if [ "$currentTicket" != "$ticket" ]
+	then
+		ticket=$currentTicket
+		echo $ticket
+	fi
+	echo $line | sed -e "s/^$ticket /- /"
+done
