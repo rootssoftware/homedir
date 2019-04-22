@@ -1,4 +1,6 @@
 export PATH=/opt/scripts:$PATH
+export PATH=/opt/carpass/scripts/jboss:$PATH
+export PATH=/opt/carpass/scripts/fuse:$PATH
 export PATH=/opt/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
