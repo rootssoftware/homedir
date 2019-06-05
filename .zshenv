@@ -2,7 +2,7 @@
 export RUBYLIB=/var/lib/gems/1.8
 export EDITOR=vim
 export LSCOLORS="dxfxcxdxbxegedabagacad"
-export M2_HOME=/opt/apache-maven
+export M2_HOME=/opt/carpass/apache-maven
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
